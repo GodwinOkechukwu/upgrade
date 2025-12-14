@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
-import mobile1 from "../assets/helpmobile1.png";
-import mobile2 from "../assets/helpmobile2.png";
-import { Cog, Globe, Warehouse } from "lucide-react";
-import welcome from "../assets/welcomehero.png";
-import dashboard from "../assets/Dashboard2.png";
+import mobile1 from "../assets/servicemobile1.png";
+import mobile2 from "../assets/servicemobile2.png";
+import { ChartNoAxesCombined } from "lucide-react";
+import globe from "../assets/globe.png";
+import cog from "../assets/settingslogo.png";
+import welcome from "../assets/tom1.png";
+import dashboard from "../assets/tom2.png";
 import slant from "../assets/slanthistory.png";
 import Button from "./ui/Button";
 
@@ -43,18 +45,16 @@ const cardVariants = {
 const Services = () => {
   return (
     <section id="services" className="bg-white py-24 md:py-32">
-      <div className="container mx-auto px-4 md:px-10">
+      <div className="container mx-auto px-4 md:px-10 ">
         {/* Main Section Container with Scroll Trigger */}
         <motion.div
-          className="text-center px-3  mb-16"
+          className="text-center px-3  mb-4"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}>
-          <div className="bg-[#F9FAFB] rounded-full px-3  inline-flex items-center gap-2 mb-4">
-            <p className="text-sm font-semibold uppercase tracking-wider text-gray-600">
-              🔥 SERVICES
-            </p>
+          <div className="inline-flex font-poppins items-center bg-[#F9FAFB] gap-2 border-2 shadow border-[#F9FAFB] px-4 py-1 rounded-full text-sm font-semibold text-[#031B1D] ">
+            🔥 SERVICES
           </div>
         </motion.div>
 
@@ -65,7 +65,7 @@ const Services = () => {
           viewport={{ once: true, amount: 0.1 }}>
           {/* Main Headline */}
           <motion.div variants={slideUpVariants} className="mb-16 text-center">
-            <h2 className="text-3xl md:text-5xl font-extrabold text-black leading-tight tracking-tight">
+            <h2 className="text-2xl font-integral md:text-5xl font-normal text-black leading-tight tracking-tight">
               CAN HELP YOU ACHIEVE <br /> FINANCIAL SUCCESS
             </h2>
           </motion.div>
@@ -89,7 +89,7 @@ const Services = () => {
                   initial={{ opacity: 0, y: 50, scale: 0.95 }}
                   whileInView={{ opacity: 1, y: 0, scale: 1 }}
                   transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-                  className="w-25 md:w-50 relative right-21.25 top-12.5"
+                  className="w-25 md:w-40 relative right-21.25 top-14.5"
                   src={mobile2}
                   alt="mobile1"
                 />
@@ -98,10 +98,10 @@ const Services = () => {
             {/* Headline and Right Mockup Placeholder (Small Transfer Screen) */}
             <div className="text-center py-10 ">
               <div className="h-11 w-11 rounded-full bg-[#03A300] flex justify-center items-center ">
-                <Globe />
+                <img src={globe} alt="globe" />
               </div>
               <motion.h3
-                className="text-2xl md:text-3xl font-bold text-black mb-4"
+                className="text-2xl md:text-[32px] text-start font-bold font-poppins text-black mb-4"
                 variants={slideUpVariants}>
                 Transfers Across The <br className="" /> Globe Are Free
               </motion.h3>
@@ -112,15 +112,15 @@ const Services = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             {/* Feature Card 1: Custom Card (Left Column) */}
             <motion.div
-              className="bg-gray-50 p-8 rounded-2xl shadow-xl transition-shadow duration-300 hover:shadow-2xl border-t-4 border-lime-500"
+              className="bg-[#F6F9F8] border-[#F6F9F8] p-8 rounded-2xl max-h-168.25 shadow-xl transition-shadow border duration-300 hover:shadow-2xl"
               variants={slideUpVariants}>
-              <div className="h-11 w-11 rounded-full bg-[#03A300] flex justify-center items-center ">
-                <Warehouse />
+              <div className="h-11 w-11 rounded-full bg-[#03A300] flex justify-center items-center mb-2 ">
+                <ChartNoAxesCombined />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              <h3 className="text-2xl md:text-3xl font-poppins font-semibold text-black mb-4">
                 Create A Card That Is <br /> Unique And Customized
               </h3>
-              <p className="text-gray-600 text-sm md:text-xl mb-6">
+              <p className="text-[#676666] text-sm md:text-[16px] mb-6 font-poppins">
                 We Offer A Comprehensive Range Of Innovative Financial Services
                 Tailored To Meet Your Needs. Our Services Include High-Yield
                 Savings Accounts.
@@ -128,29 +128,37 @@ const Services = () => {
 
               {/* Supporting Visual (Line Chart) */}
               <motion.div variants={slideUpVariants}>
-                <img src={welcome} alt="welcome" />
+                <img
+                  className="md:w-100 m-auto relative top-8"
+                  src={welcome}
+                  alt="welcome"
+                />
               </motion.div>
             </motion.div>
 
             {/* Feature Card 2: Personalized Insights (Right Column) */}
             <motion.div
-              className="p-8 rounded-2xl shadow-xl transition-shadow duration-300 hover:shadow-2xl bg-[#001027] border-t-4 border-teal-500"
+              className="p-8 rounded-2xl shadow-xl transition-shadow duration-300 hover:shadow-2xl bg-[#001027] "
               variants={slideUpVariants}>
-              <div className="h-11 w-11 rounded-full bg-[#03A300] flex justify-center items-center ">
-                <Cog />
+              <div className="h-11 w-11 rounded-full bg-[#03A300] flex justify-center items-center mb-2 ">
+                <img src={cog} alt="" />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4">
+              <h3 className="text-2xl md:text-3xl font-poppins font-semibold text-white mb-4">
                 Personalized Insights <br /> And Financial Goals
               </h3>
-              <p className="text-gray-300 text-sm md:text-xl mb-6">
+              <p className="text-[#A7A7A7] text-sm md:text-[16px] mb-6 font-poppins">
                 Discover Opportunities That Offer Competitive Interest Rates And
                 Flexible Deposit Options. Investment Money Whilst Allowing Us To
                 Offer Personalized Services.
               </p>
 
               {/* Supporting Visual (Two Balance Blocks) */}
-              <div className="mt-6 flex gap-4">
-                <img src={dashboard} alt="dash" />
+              <div className="mt-6 flex gap-4 max-h-168.25">
+                <img
+                  className="md:w-80  m-auto relative top-8"
+                  src={dashboard}
+                  alt="dash"
+                />
                 <div className="flex-1 p-4 rounded-xl  hidden md:block  shadow-lg border border-gray-200 bg-white h-25 relative right-12.5 top-20">
                   <p className="text-xs font-semibold text-gray-300 mb-1">
                     Total Balance
@@ -177,11 +185,11 @@ const Services = () => {
               }}
               className=" bg-[#E2FF54] h-80 rounded-2xl">
               <div className="mt-10 w-[80%] m-auto text-black">
-                <h2 className="text-2xl md:text-4xl  font-semibold">
+                <h2 className="text-2xl md:text-4xl font-poppins font-semibold">
                   100% <br />
                   Dedication
                 </h2>
-                <p className="pt-5">
+                <p className="pt-5 font-poppins">
                   we offer a comprehensive range of innovative financial
                   services tailored to meet your needs.
                 </p>
@@ -201,7 +209,7 @@ const Services = () => {
 
               {/* Text content */}
               <div className="max-w-[70%]">
-                <h2 className="text-2xl md:text-3xl font-semibold leading-tight text-black">
+                <h2 className="text-2xl md:text-3xl font-semibold font-poppins leading-tight text-black">
                   Hold Money In <br />
                   30+ Currencies
                 </h2>
@@ -222,7 +230,7 @@ const Services = () => {
                 boxShadow: "0 20px 40px rgba(0,0,0,0.08)",
               }}
               className=" bg-[#2D907A] rounded-2xl h-80 text-center flex justify-center items-center">
-              <h2 className="text-2xl md:text-4xl font-semibold text-white">
+              <h2 className="text-2xl md:text-4xl font-semibold font-poppins text-white">
                 Visit Our
                 <br /> Services page
               </h2>

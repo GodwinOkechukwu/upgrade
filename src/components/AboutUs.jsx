@@ -1,270 +1,218 @@
 import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
-const AboutUs = () => {
-  const [activeBar, setActiveBar] = useState(null);
+/* ================= ANIMATION VARIANTS ================= */
 
-  // Data for the graph
-  const graphData = [
-    { month: "April", value: 30, amount: "$15,234" },
-    { month: "May", value: 50, amount: "$18,456" },
-    { month: "June", value: 85, amount: "$20,000" },
-    { month: "July", value: 45, amount: "$16,892" },
-  ];
-
-  // Container animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.1,
-      },
-    },
-  };
-
-  // Item animation variants
-  const itemVariants = {
-    hidden: { y: 30, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  // Card animation variant
-  const cardVariants = {
-    hidden: { x: -50, opacity: 0 },
-    visible: {
-      x: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.7,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  return (
-    <section id="about" className="bg-white py-20 px-4 md:px-10">
-      <div className="container mx-auto">
-        {/* Section Header */}
-        <motion.div
-          className="text-center px-3  mb-16"
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6 }}>
-          <div className="bg-[#F9FAFB] rounded-full px-3  inline-flex items-center gap-2 mb-4">
-            <p className="text-sm font-semibold uppercase tracking-wider text-gray-600">
-              🔥 ABOUT US
-            </p>
-          </div>
-        </motion.div>
-
-        {/* Content Grid */}
-        <motion.div
-          className="grid md:grid-cols-2 gap-12 items-center"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}>
-          {/* Left Side - Animated Graph Card */}
-          <div className="bg-[#F5F5F5] py-10 rounded-2xl w-full">
-            <motion.div
-              className="w-[90%] md:w-[80%] m-auto"
-              variants={cardVariants}>
-              <div className="bg-[#004852] rounded-3xl p-8 shadow-2xl relative overflow-hidden">
-                {/* Background Pattern */}
-                <div className="absolute inset-0 opacity-10">
-                  <div
-                    className="absolute inset-0"
-                    style={{
-                      backgroundImage: `
-                      linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-                      linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px)
-                    `,
-                      backgroundSize: "30px 30px",
-                    }}
-                  />
-                </div>
-
-                {/* Card Header */}
-                <div className="relative z-10 mb-6">
-                  <h3 className="text-white text-xl font-bold mb-1">
-                    Saving Month
-                  </h3>
-                  <motion.p
-                    className="text-white text-4xl font-extrabold"
-                    initial={{ scale: 0.5, opacity: 0 }}
-                    whileInView={{ scale: 1, opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.5, duration: 0.5 }}>
-                    $1852.00
-                  </motion.p>
-                  <p className=" text-sm font-semibold">
-                    Increase of <span className="font-bold">12%</span> from last
-                    month
-                  </p>
-                </div>
-
-                {/* Graph Container */}
-                <div className="relative z-10 h-64">
-                  {/* Y-axis labels */}
-                  <div className="absolute left-0 top-0 bottom-8 flex flex-col justify-between text-white/60 text-xs">
-                    <span>50k</span>
-                    <span>20k</span>
-                    <span>10k</span>
-                    <span>0</span>
-                  </div>
-
-                  {/* Grid lines */}
-                  <div className="absolute left-12 right-0 top-0 bottom-8 flex flex-col justify-between">
-                    {[...Array(4)].map((_, i) => (
-                      <div
-                        key={i}
-                        className="border-t border-white/10 border-dashed"
-                      />
-                    ))}
-                  </div>
-
-                  {/* Bars */}
-                  <div className="absolute left-12 right-0 bottom-0 h-full flex items-end justify-around pb-8">
-                    {graphData.map((data, index) => (
-                      <motion.div
-                        key={data.month}
-                        className="relative flex flex-col items-center cursor-pointer group"
-                        onHoverStart={() => setActiveBar(index)}
-                        onHoverEnd={() => setActiveBar(null)}
-                        initial={{ height: 0, opacity: 0 }}
-                        whileInView={{
-                          height: `${data.value}%`,
-                          opacity: 1,
-                        }}
-                        viewport={{ once: true }}
-                        transition={{
-                          delay: 0.7 + index * 0.1,
-                          duration: 0.8,
-                          ease: "easeOut",
-                        }}>
-                        {/* Tooltip */}
-                        <motion.div
-                          className="absolute -top-12 bg-white text-gray-900 px-3 py-1 rounded-lg text-sm font-bold shadow-lg"
-                          initial={{ opacity: 0, y: 10 }}
-                          animate={{
-                            opacity: activeBar === index ? 1 : 0,
-                            y: activeBar === index ? 0 : 10,
-                          }}
-                          transition={{ duration: 0.2 }}>
-                          {data.amount}
-                          <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-white rotate-45" />
-                        </motion.div>
-
-                        {/* Bar */}
-                        <motion.div
-                          className="w-12 md:w-16 bg-linear-to-t from-white/80 to-white/40 rounded-t-lg relative overflow-hidden"
-                          style={{ height: "100%" }}
-                          whileHover={{ scale: 1.05 }}
-                          transition={{ duration: 0.2 }}>
-                          {/* Highlight dot at top */}
-                          {activeBar === index && (
-                            <motion.div
-                              className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full border-2 border-[#004852]"
-                              initial={{ scale: 0 }}
-                              animate={{ scale: 1 }}
-                              transition={{ duration: 0.3 }}
-                            />
-                          )}
-                        </motion.div>
-
-                        {/* Month label */}
-                        <span className="text-white/80 text-xs font-medium mt-2">
-                          {data.month}
-                        </span>
-                      </motion.div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Right Side - Feature List */}
-          <motion.div className="space-y-6" variants={containerVariants}>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-              ALL YOUR MONEY
-              <br />
-              NEEDS IN ONE APP
-            </h2>
-            {/* Feature 1 */}
-            <motion.div
-              className="bg-white rounded-2xl p-6 border-l-4 border-gray-300 "
-              variants={itemVariants}
-              whileHover={{
-                x: 10,
-                boxShadow: "0 10px 30px rgba(0,0,0,0.1)",
-                borderColor: "#004852",
-                backgroundColor: "#F1FFD2",
-              }}
-              transition={{ duration: 0.3 }}>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">
-                Expenses Tracker
-              </h3>
-              <p className="text-gray-700 text-sm leading-relaxed">
-                Our comprehensive selection of medications, supplements, and
-                healthcare products.
-              </p>
-            </motion.div>
-
-            {/* Feature 2 */}
-            <motion.div
-              className="bg-white rounded-2xl p-6 border-l-4 border-gray-300 shadow-sm"
-              variants={itemVariants}
-              whileHover={{
-                x: 10,
-                boxShadow: "0 10px 30px rgba(0,0,0,0.1)",
-                borderColor: "#004852",
-                backgroundColor: "#F1FFD2",
-              }}
-              transition={{ duration: 0.3 }}>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">
-                Crypto Connection
-              </h3>
-              <p className="text-gray-700 text-sm leading-relaxed">
-                From advanced imaging technology such as MRI and CT scanners to
-                precision surgical tools.
-              </p>
-            </motion.div>
-
-            {/* Feature 3 */}
-            <motion.div
-              className="bg-white rounded-2xl p-6 border-l-4 border-gray-300 shadow-sm"
-              variants={itemVariants}
-              whileHover={{
-                x: 10,
-                boxShadow: "0 10px 30px rgba(0,0,0,0.1)",
-                borderColor: "#004852",
-                backgroundColor: "#F1FFD2",
-              }}
-              transition={{ duration: 0.3 }}>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">
-                Automated Invoicing
-              </h3>
-              <p className="text-gray-700 text-sm leading-relaxed">
-                We're committed to leveraging the latest innovations in medical
-                technology.
-              </p>
-            </motion.div>
-          </motion.div>
-        </motion.div>
-      </div>
-    </section>
-  );
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
 };
 
-export default AboutUs;
+const fade = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { duration: 0.4, ease: "easeOut" },
+  },
+};
+
+/* ================= DATA ================= */
+
+const graphData = [
+  { month: "April", value: 30, amount: "$15,234" },
+  { month: "May", value: 50, amount: "$18,456" },
+  { month: "June", value: 85, amount: "$20,000" },
+  { month: "July", value: 45, amount: "$16,892" },
+];
+
+const features = [
+  {
+    title: "Expenses Tracker",
+    desc: "Our comprehensive selection of medications, supplements, and healthcare products.",
+  },
+  {
+    title: "Crypto Connection",
+    desc: "From advanced imaging technology such as MRI and CT scanners to precision tools.",
+  },
+  {
+    title: "Automated Invoicing",
+    desc: "We're committed to leveraging the latest innovations in medical technology.",
+  },
+];
+
+/* ================= COMPONENT ================= */
+
+export default function AboutUs() {
+  const [activeBar, setActiveBar] = useState(2);
+  const [activeFeature, setActiveFeature] = useState(0);
+
+  return (
+    <motion.section
+      className="bg-white py-24"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}>
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="grid lg:grid-cols-2 gap-20 items-center">
+          {/* ================= LEFT GRAPH ================= */}
+          <motion.div
+            variants={fadeUp}
+            className="bg-[#F5F5F5] rounded-3xl p-10 border">
+            <div className="bg-[#004852] rounded-3xl p-8 text-white">
+              {/* Header */}
+              <motion.div variants={fadeUp} className="mb-6 font-poppins">
+                <p className="text-sm md:text-[18px] opacity-80 text-[#F9F9F9] font-medium">
+                  Saving Month
+                </p>
+                <h3 className="text-4xl font-bold">$1852.00</h3>
+                <p className="text-sm text-[#F0F0F0] opacity-80 mt-1">
+                  Increase of
+                  <span className="font-bold text-white pl-1">12%</span> from
+                  last month
+                </p>
+              </motion.div>
+
+              {/* Chart */}
+              <motion.div variants={fade} className="relative h-64 flex">
+                {/* Y Axis */}
+                <div className="flex flex-col justify-between pr-4 text-xs opacity-70">
+                  <span>50k</span>
+                  <span>20k</span>
+                  <span>10k</span>
+                  <span>0</span>
+                </div>
+
+                {/* Grid + Bars */}
+                <div className="relative flex-1 flex flex-col">
+                  {/* Chart Area */}
+                  <div className="relative flex-1">
+                    {/* Grid */}
+                    <div className="absolute inset-0 flex flex-col justify-between">
+                      {[...Array(4)].map((_, i) => (
+                        <div
+                          key={i}
+                          className="border-t border-dashed border-white/20"
+                        />
+                      ))}
+                    </div>
+
+                    {/* Bars */}
+                    <div className="absolute inset-0 flex items-end justify-between md:px-6">
+                      {graphData.map((bar, i) => {
+                        const isActive = activeBar === i;
+
+                        return (
+                          <motion.div
+                            key={bar.month}
+                            onMouseEnter={() => setActiveBar(i)}
+                            className="relative flex flex-col items-center cursor-pointer"
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{
+                              opacity: 1,
+                              height: `${bar.value}%`,
+                            }}
+                            transition={{
+                              opacity: { duration: 0.3 },
+                              height: { duration: 0.6, ease: "easeOut" },
+                            }}>
+                            {/* Tooltip */}
+                            {isActive && (
+                              <motion.div
+                                initial={{ opacity: 0, y: 6 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.2 }}
+                                className="absolute -top-10 bg-white text-gray-900 text-xs font-semibold px-3 py-1 rounded-lg shadow">
+                                {bar.amount}
+                                <span className="absolute left-1/2 -bottom-1 w-2 h-2 bg-white rotate-45 -translate-x-1/2" />
+                              </motion.div>
+                            )}
+
+                            {/* Bar */}
+                            <div
+                              className={`relative w-10 rounded-t-xl transition-all duration-300 ${
+                                isActive ? "bg-[#2C9B7C]" : "bg-[#D9D9D9]"
+                              }`}
+                              style={{ height: "100%" }}>
+                              {isActive && (
+                                <span className="absolute top-2 left-1/2 w-3 h-3 bg-black rounded-full -translate-x-1/2 border-2 border-[#D9D9D9]" />
+                              )}
+                            </div>
+                          </motion.div>
+                        );
+                      })}
+                    </div>
+                  </div>
+
+                  {/* X Axis */}
+                  <div className="flex justify-between px-6 mt-2 text-xs text-white/80">
+                    {graphData.map((bar) => (
+                      <span key={bar.month}>{bar.month}</span>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </motion.div>
+
+          {/* ================= RIGHT CONTENT ================= */}
+          <motion.div variants={fadeUp} className="relative">
+            {/* About Pill */}
+            <div className="inline-flex items-center poppins bg-[#F9FAFB] gap-2 border-2 shadow  border-[#F9FAFB] px-4 py-1 rounded-full text-sm font-semibold text-[#031B1D] mb-6">
+              🔥 ABOUT US
+            </div>
+
+            <h2 className="text-2xl font-integral lg:text-5xl font-medium  text-black mb-10">
+              ALL YOUR MONEY <br /> NEEDS IN ONE APP
+            </h2>
+
+            <div className="relative flex gap-6">
+              {/* Indicator Bar */}
+              <div className="w-2 bg-[#ddd] rounded-full h-112.5">
+                <motion.div
+                  layout
+                  className="w-2 bg-[#004852] rounded-full"
+                  animate={{
+                    height: 72,
+                    y: activeFeature * 170,
+                  }}
+                  transition={{ type: "spring", stiffness: 300, damping: 25 }}
+                />
+              </div>
+
+              {/* Feature Cards */}
+              <div className="flex-1 space-y-6">
+                {features.map((item, i) => (
+                  <motion.div
+                    key={i}
+                    onMouseEnter={() => setActiveFeature(i)}
+                    initial={{ opacity: 0, y: 16 }}
+                    animate={{
+                      opacity: 1,
+                      y: activeFeature === i ? -4 : 0,
+                    }}
+                    transition={{ duration: 0.4, ease: "easeOut" }}
+                    className={`rounded-2xl p-6 cursor-pointer transition  ${
+                      activeFeature === i
+                        ? "bg-[#F1FFD2] shadow-lg"
+                        : "bg-[#E5E5E5] border border-[#F9FAFB]"
+                    }`}>
+                    <h3 className="text-lg md:text-[20px] font-bold font-poppins text-black">
+                      {item.title}
+                    </h3>
+                    <p className="text-sm md:text-[16px] font-poppins  text-black mt-2">
+                      {item.desc}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </motion.section>
+  );
+}

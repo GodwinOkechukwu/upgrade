@@ -1,14 +1,13 @@
 import { motion } from "framer-motion";
-import mobile from "../assets/mobile.png";
-import atm from "../assets/greenVisa.png";
-import yellowcard from "../assets/yellowcard.png";
-import Logo1 from "../assets/Logo1.png";
-import Logo2 from "../assets/Logo2.png";
-import Logo3 from "../assets/Logo3.png";
-import Logo4 from "../assets/Logo4.png";
-import Logo5 from "../assets/Logo5.png";
-import Paypal from "../assets/Paypal.png";
+import mobile from "../assets/grouphero.png";
+import Logo1 from "../assets/Logowrap1.png";
+import Logo2 from "../assets/LogoWrap2.png";
+import Logo3 from "../assets/LogoWrap3.png";
+import Logo4 from "../assets/LogoWrap4.png";
+import Logo5 from "../assets/LogoWrap5.png";
+import Paypal from "../assets/Paypal2.png";
 import Button from "./ui/Button";
+import Header from "./Header";
 // Framer Motion Variants for Staggered Animation
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -48,6 +47,9 @@ const Hero = () => {
         backgroundSize: "80px 80px, 80px 80px, cover",
         backgroundPosition: "0 0, 0 0, 0 0",
       }}>
+      <div className="relative bottom-20">
+        <Header />
+      </div>
       <div className="container mx-auto px-4 md:px-10 ">
         <motion.div
           className="flex flex-col md:flex-row items-center justify-between"
@@ -55,19 +57,20 @@ const Hero = () => {
           initial="hidden"
           animate="visible">
           {/* LEFT SIDE: Content and CTA */}
-          <div className="z-10 w-full md:w-1/2 pt-4 md:pt-32 md:relative md:bottom-40 pb-12 md:pb-0">
+          <div className="z-10 w-full md:w-1/2 pt-4 md:pt-50 md:relative md:bottom-40 pb-12 md:pb-0">
             {/* Trust Badge (First to fade in) */}
-            <div className=" rounded-full bg-white/10 backdrop-blur-sm px-3 max-w-70">
+            <div className=" rounded-full bg-white/10 backdrop-blur-sm px-3 max-w-65">
               <motion.p
                 className="mb-4 flex items-center text-sm font-semibold uppercase tracking-widest text-white"
                 variants={itemVariants}>
-                <span className="mr-2 text-lg">🔥</span> 100% TRUSTED PLATFORM
+                <span className="mr-2 text-lg font-poppins">🔥</span> 100%
+                TRUSTED PLATFORM
               </motion.p>
             </div>
 
             {/* Headline */}
             <motion.h1
-              className="mb-6 text-4xl! md:text-[64px]! font-extrabold leading-tight text-white"
+              className="  mb-6 text-4xl! md:text-[64px]! font-extrabold leading-tight text-white"
               variants={itemVariants}>
               FINANCE WITH <br />
               SECURITY AND <br />
@@ -76,7 +79,7 @@ const Hero = () => {
 
             {/* Subtext */}
             <motion.p
-              className="mb-8 md:text-lg text-gray-300 max-w-md"
+              className="mb-8 -mt-5 text-sm md:text-lg text-gray-300 max-w-md font-poppins"
               variants={itemVariants}>
               No-Fee Checking Account With Cash Back Rewards. Enjoy Fee-Free
               Banking And Earn Cash Back On Your Everyday Purchases.
@@ -114,25 +117,9 @@ const Hero = () => {
                   initial={{ opacity: 0, y: 50, scale: 0.95 }}
                   whileInView={{ opacity: 1, y: 0, scale: 1 }}
                   transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-                  className="relative h-40 md:h-80 z-20 top-20 left-[40%] sm:left-[45%] md:left-[50%] md:top-37.5"
-                  src={atm}
-                  alt="atm"
-                />
-                <motion.img
-                  initial={{ opacity: 0, y: 50, scale: 0.95 }}
-                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                  transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
                   src={mobile}
                   className="h-80 md:h-140 z-10 relative"
                   alt="mobile-mopup"
-                />
-                <motion.img
-                  initial={{ opacity: 0, y: 50, scale: 0.95 }}
-                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                  transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-                  className="relative h-22 md:h-55 right-[23%] top-20  md:right-[36%] md:top-30"
-                  src={yellowcard}
-                  alt="card"
                 />
               </div>
             </motion.div>

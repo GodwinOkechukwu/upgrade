@@ -1,7 +1,6 @@
-import React from "react";
 import { motion } from "framer-motion";
-import mobile1 from "../assets/mobile1.png";
-import mobile2 from "../assets/mobile2.png";
+import mobile1 from "../assets/featuresmobile1.png";
+import mobile2 from "../assets/featuresmobile2.png";
 import Button from "./ui/Button";
 
 // Framer Motion Variants for Scroll Reveal
@@ -31,8 +30,6 @@ const Features = () => {
   const featurePoints = [
     "Get 3% Cash Back On Everyday Purchases, 2% On Everything else",
     "Extra Spending Power When You Have Rewards Checking Through Upgrade",
-    // "No-Fee Cash Withdrawals at 40,000+ ATMs Worldwide",
-    // "FDIC Insured up to $250,000 for maximum security",
   ];
 
   return (
@@ -47,18 +44,14 @@ const Features = () => {
         >
           {/* LEFT SIDE: Text and CTA */}
           <div className="w-full md:w-1/2">
-            <div className="bg-[#F9FAFB] rounded-full px-3  inline-flex items-center gap-2 mb-4">
-              <motion.p
-                className="p-3 text-sm font-semibold uppercase tracking-widest text-black! "
-                variants={itemVariants}>
-                🔥Featured
-              </motion.p>
+            <div className="inline-flex items-center bg-[#F9FAFB] gap-2 border-2 shadow  border-[#F9FAFB] px-4 py-1 rounded-full text-sm font-semibold text-[#031B1D] mb-6">
+              🔥 FEATURED
             </div>
 
             <motion.h2
-              className="mb-6 text-4xl md:text-5xl font-extrabold leading-tight text-gray-900"
+              className="mb-2 text-2xl font-integral md:text-5xl font-normal leading-tight text-[#090909]"
               variants={itemVariants}>
-              ALL THE FEATURES <br />
+              ALL THE FEATURES <br className="" />
               IN ONE APP
             </motion.h2>
 
@@ -67,12 +60,12 @@ const Features = () => {
               {featurePoints.map((point, index) => (
                 <motion.li
                   key={index}
-                  className="flex items-start md:text-lg text-gray-700"
+                  className="flex items-start text-sm md:text-[16px] font-poppins text-[#676666] max-w-100"
                   variants={itemVariants}
                   // Add a slight delay for subsequent items to feel staggered
                   transition={{ delay: 0.1 + index * 0.05 }}>
-                  <span className="mr-3 md:text-xl text-lime-500 font-bold">
-                    ✓
+                  <span className="mr-3 md:text-xl text-[#676666] font-bold">
+                    .
                   </span>
 
                   {point}
