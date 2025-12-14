@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react"; // Using lucide-react for clean icons
-import logo from "../assets/logo.png";
+import logo from "../assets/logov.png";
 import { animate } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
 
@@ -46,19 +46,22 @@ const Header = () => {
       initial="hidden"
       animate="visible"
       variants={headerVariants}
-      className="sticky top-0 z-50 w-full"
-      style={{
-        backgroundImage: `
-      linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-      linear-gradient(135deg, #00142D80 0%, #004852 100%)
-    `,
-        backgroundSize: "80px 80px, 80px 80px, cover",
-        backgroundPosition: "0 0",
-      }}>
+      className="sticky top-0 z-50 w-full bg-transparent border-none "
+      style={
+        {
+          //   backgroundImage: `
+          //   linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+          //   linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+          //   linear-gradient(135deg, #00142D80 0%, #004852 100%)
+          // `,
+          // backgroundSize: "80px 80px, 80px 80px, cover",
+          // backgroundPosition: "0 0",
+          // backgroundColor: "",
+        }
+      }>
       <div className="container mx-auto flex items-center justify-between p-4 md:px-10">
         {/* Logo/Brand Name (using text for simplicity) */}
-        <img className="" src={logo} alt="logo" />
+        <img className="w-40" src={logo} alt="logo" />
 
         {/* Desktop Navigation Links */}
         <nav className="hidden md:flex md:space-x-8">
@@ -66,7 +69,7 @@ const Header = () => {
             <button
               key={link.name}
               onClick={() => scrollTo(link.id)}
-              className="text-sm font-medium text-[#DCDCDC] transition hover:text-[#00B512]">
+              className="text-sm font-medium font-poppins text-[#DCDCDC] transition hover:text-[#00B512] cursor-pointer">
               {link.name}
             </button>
           ))}
@@ -74,7 +77,7 @@ const Header = () => {
 
         {/* Sign In / Sign Up Button */}
         <div className="hidden items-center space-x-4 md:flex">
-          <button className="rounded-md bg-transparent! border cursor-pointer border-[#DCDCDC]  px-8 py-2 text-sm font-bold transition duration-300 hover:bg-[#00B512]!">
+          <button className="rounded-xl  border cursor-pointer border-[#DCDCDC]  px-8 py-2 text-sm font-bold font-poppins transition duration-300 hover:bg-[#00B512]! hover:border-[#00B512]">
             Sign In
           </button>
         </div>

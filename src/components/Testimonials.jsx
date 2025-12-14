@@ -4,6 +4,7 @@ import test2 from "../assets/test2.png";
 import test3 from "../assets/test3.png";
 import star from "../assets/star.png";
 import Button from "./ui/Button";
+import colon from "../assets/colon.png";
 const containerVariants = {
   hidden: {},
   visible: {
@@ -56,19 +57,17 @@ const Testimonials = () => {
     <section id="testimonials" className="bg-[#F6F9F8] py-24">
       <div className="max-w-6xl mx-auto px-4 text-center">
         {/* Badge */}
-        <motion.span
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="inline-block mb-4 rounded-full bg-white px-4 py-1 text-xs font-semibold text-gray-600 shadow">
+
+        <div className="inline-flex items-center font-poppins bg-[#F9FAFB] gap-2 border-2 shadow  border-[#F9FAFB] px-4 py-1 rounded-full text-sm font-semibold text-[#031B1D] mb-6">
           🔥 TESTIMONIAL
-        </motion.span>
+        </div>
 
         {/* Title */}
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="text-4xl md:text-5xl font-bold text-gray-900 mb-14">
+          className="text-2xl md:text-5xl font-integral font-normal text-gray-900 mb-14">
           GET TO KNOW OUR CLIENTS
         </motion.h2>
 
@@ -98,13 +97,13 @@ const Testimonials = () => {
               <motion.div
                 initial={{ opacity: 0.4 }}
                 whileHover={{ opacity: 1, scale: 1.05 }}
-                className={`text-4xl mb-4 font-serif ${
-                  item.active ? "text-lime-400" : "text-lime-500"
-                }`}>
-                “”
+                className={`text-4xl mb-4 font-serif`}>
+                <img className="w-15" src={colon} alt="colon" />
               </motion.div>
 
-              <p className="text-sm leading-relaxed mb-6">{item.text}</p>
+              <p className="text-sm leading-relaxed mb-6 font-poppins">
+                {item.text}
+              </p>
 
               {/* Footer */}
               <div className="flex items-center gap-4 mt-auto">
@@ -113,7 +112,7 @@ const Testimonials = () => {
                   alt={item.name}
                   className="w-10 h-10 rounded-full object-cover"
                 />
-                <div>
+                <div className="font-poppins">
                   <img src={star} alt="" />
                   <p className="text-sm font-semibold">{item.name}</p>
                   <p

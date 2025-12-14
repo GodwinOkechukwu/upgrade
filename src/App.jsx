@@ -1,7 +1,7 @@
 import AboutUs from "./components/AboutUs";
 import Features from "./components/Features";
 import Footer from "./components/Footer";
-import Header from "./components/Header";
+// import Header from "./components/Header";
 import Hero from "./components/Hero";
 import HeroCTA from "./components/HeroCTA";
 import Services from "./components/Services";
@@ -11,7 +11,7 @@ import Trustworthiness from "./components/Trustworthiness";
 function App() {
   return (
     <div className="">
-      <Header />
+      {/* <Header /> */}
       <Hero />
       <AboutUs />
       <Features />

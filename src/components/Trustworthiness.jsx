@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import Button from "./ui/Button"; // Import the reusable button component
-import mobile3 from "../assets/mobile3.png";
-import atm from "../assets/atm3.png";
+import mobile3 from "../assets/trustmobile.png";
+import atm from "../assets/trustatm.png";
 
 // Framer Motion Variants for Staggered Scroll Reveal
 const containerVariants = {
@@ -52,8 +52,6 @@ const Trustworthiness = () => {
           initial={{ opacity: 0, y: 50, scale: 0.95 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-          //   initial="hidden"
-          //   whileInView="visible" // <-- Triggers animation when section enters viewport
           viewport={{ once: true, amount: 0.3 }} // Ensures animation runs once
         >
           {/* LEFT SIDE: Image/Mockup Section */}
@@ -84,27 +82,27 @@ const Trustworthiness = () => {
 
           {/* RIGHT SIDE: Text and CTA */}
           <div className="w-full md:w-1/2 pt-10 md:pt-0">
-            <div className=" rounded-full bg-white/10 backdrop-blur-sm px-3 max-w-70">
+            <div className=" rounded-full bg-white/10 backdrop-blur-sm px-3 max-w-50">
               <motion.p
                 className="mb-4 flex items-center text-sm font-semibold uppercase tracking-widest text-white!"
                 variants={itemVariants}>
-                <span className="mr-2 text-lg">🔥</span> TRUSTWORTHINESS
+                <span className="mr-2 text-lg font-poppins">🔥</span>{" "}
+                TRUSTWORTHINESS
               </motion.p>
             </div>
 
             <motion.h2
-              className="mb-6 text-4xl md:text-5xl font-extrabold leading-tight text-white"
+              className="mb-6 font-integral text-2xl md:text-5xl font-normal leading-tight text-white"
               variants={itemVariants}>
               WE VALUE YOUR <br />
-              TRUST AND <br />
-              SECURITY
+              TRUST AND SECURITY
             </motion.h2>
 
             <motion.p
-              className="mb-10 md:text-lg text-gray-300 max-w-xl"
+              className="mb-10 md:text-lg text-gray-300 max-w-xl font-poppins capitalize"
               variants={itemVariants}>
               Our mission is to make finance more accessible, transparent, and
-              secure for everyone.
+              secure for everyone. with cutting
             </motion.p>
 
             {/* CTA Button (Using the Reusable Component) */}

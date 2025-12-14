@@ -1,78 +1,84 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react"; // Using a standard icon for the arrow
+import { ArrowRight } from "lucide-react";
 
-// Define default colors for easy usage
+// Define default colors
 const defaultColors = {
-  primary: "bg-[#00B512]", // Default button fill
-  text: "text-gray-900", // Default text color
-  ring: "ring-lime-300", // Default ring color for the outlined button
+  primary: "bg-[#00B512]",
+  text: "text-gray-900",
+  ring: "ring-lime-300",
   border: "",
+};
+
+// Arrow animation variants
+const arrowVariants = {
+  initial: {
+    x: 0,
+    y: 0,
+    rotate: 0,
+  },
+  hover: {
+    x: -1,
+    y: -1,
+    rotate: -30,
+    transition: {
+      type: "spring",
+      stiffness: 300,
+      damping: 18,
+    },
+  },
 };
 
 const Button = ({
   children,
-  primaryColor = defaultColors.primary, // Button background color
-  textColor = defaultColors.text, // Text color
-  circleColor = defaultColors.primary, // Color of the circular accent
-  ringColor = defaultColors.ring, // Color for the outlined button ring
-  isOutlined = true, // Controls the style (filled vs. outlined)
+  primaryColor = defaultColors.primary,
+  textColor = defaultColors.text,
+  circleColor = defaultColors.primary,
+  ringColor = defaultColors.ring,
+  isOutlined = true,
   onClick,
-  arrowColor,
+  arrowColor = "text-white",
   border = defaultColors.border,
   type = "button",
-  className = "", // Allows passing custom Tailwind classes
+  className = "",
 }) => {
-  // Style when the button is *outlined* (like in the Features section CTA image)
+  // OUTLINED STYLE
   if (isOutlined) {
     return (
       <motion.button
         type={type}
         onClick={onClick}
-        // Base styling for the container (invisible)
-        className={`flex items-center group relative p-1 transition duration-300 ${className}`}
-        whileHover={{ scale: 1.02 }}
+        className={`group relative flex items-center p-1 transition duration-300 ${className}`}
+        initial="initial"
+        whileHover="hover"
         whileTap={{ scale: 0.98 }}>
-        {/* 1. Main Text Button (Outlined Style) */}
+        {/* Text Button */}
         <div
-          className={`rounded-full ${ringColor} ${border}  px-8  py-3 font-bold text-lg ${primaryColor} transition duration-300  ${textColor}`}
-          style={{
-            // Ensures the text color changes slightly on hover when outlined
-            color: textColor.includes("text-gray")
-              ? textColor.replace("text-gray", "text-gray")
-              : textColor,
-          }}>
+          className={`rounded-full px-8 py-3 text-lg font-bold font-poppins transition duration-300 ${primaryColor} ${textColor} ${ringColor} ${border}`}>
           <span className="pr-6">{children}</span>
         </div>
 
-        {/* 2. Circular Accent (Filled Style) */}
+        {/* Circular Accent */}
         <motion.div
-          className={`absolute right-0 flex h-14 w-14 items-center justify-center rounded-full transition-colors duration-300 shadow-lg ${circleColor}`}
-          // Hover effect on the circular accent
-          whileHover={{ x: 5, boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)" }}>
-          <ArrowRight
-            className={`h-6 w-6 transition duration-300 ${arrowColor}`}
-          />
+          className={`absolute right-0 flex h-14 w-14 items-center justify-center rounded-full shadow-lg ${circleColor}`}
+          whileHover={{ boxShadow: "0 8px 18px rgba(0,0,0,0.2)" }}>
+          <motion.div variants={arrowVariants}>
+            <ArrowRight className={`h-6 w-6 ${arrowColor}`} />
+          </motion.div>
         </motion.div>
       </motion.button>
     );
   }
 
-  // Style when the button is *filled* (like in the Hero section)
+  // FILLED STYLE
   return (
     <motion.button
       type={type}
       onClick={onClick}
-      // Base styling for the filled button
-      className={`rounded-full ${primaryColor} px-8 py-3 text-lg font-bold ${textColor} transition duration-300 shadow-lg ${className}`}
-      // Sleek Framer Motion hover effects
+      className={`rounded-full px-8 py-3 text-lg font-bold shadow-lg transition duration-300 ${primaryColor} ${textColor} ${className}`}
       whileHover={{
         scale: 1.05,
-        boxShadow: `0 10px 20px -5px ${circleColor
-          .replace("bg-", "rgba(")
-          .replace("-500", ", 0.4)")
-          .replace("-400", ", 0.4)")}`,
-        transition: { duration: 0.2 },
+        boxShadow: "0 14px 30px rgba(0,0,0,0.25)",
       }}
       whileTap={{ scale: 0.95 }}>
       {children}

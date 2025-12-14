@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
-import logo from "../assets/logofooter.png";
-
+import logo from "../assets/footerlogo.png";
+import face from "../assets/face.png";
+import link from "../assets/linkln.png";
+import play from "../assets/playlogo.png";
 const Footer = () => {
   // Animation variants
   const containerVariants = {
@@ -26,7 +28,7 @@ const Footer = () => {
 
   return (
     <motion.footer
-      className="bg-white border-t border-gray-200 py-12 px-4 md:px-10"
+      className="bg-white  py-12 px-4 md:px-10"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
@@ -38,11 +40,11 @@ const Footer = () => {
           variants={itemVariants}>
           {/* Logo */}
           <div className="flex items-center gap-2 mb-4">
-            <img className="" src={logo} alt="logo" />
+            <img className="w-50" src={logo} alt="logo" />
           </div>
 
           {/* App Store Buttons */}
-          <div className="flex gap-3 mb-6">
+          <div className="flex gap-5 mb-6">
             <motion.a
               href="#"
               className="bg-black text-white! px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-gray-800 transition-colors"
@@ -51,8 +53,8 @@ const Footer = () => {
               <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 22C7.79 22.05 6.8 20.68 5.96 19.47C4.25 17 2.94 12.45 4.7 9.39C5.57 7.87 7.13 6.91 8.82 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z" />
               </svg>
-              <div className="text-left">
-                <div className="text-[10px] leading-none">GET IT ON</div>
+              <div className="text-left font-poppins">
+                <div className="text-[10px] leading-none ">Download on the</div>
                 <div className="text-sm font-semibold leading-tight">
                   App Store
                 </div>
@@ -64,10 +66,8 @@ const Footer = () => {
               className="bg-black text-white! px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-gray-800 transition-colors"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}>
-              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
-              </svg>
-              <div className="text-left">
+              <img className="w-5" src={play} alt="play" />
+              <div className="text-left font-poppins">
                 <div className="text-[10px] leading-none">GET IT ON</div>
                 <div className="text-sm font-semibold leading-tight">
                   Google Play
@@ -79,41 +79,41 @@ const Footer = () => {
 
         {/* Navigation Links */}
         <motion.nav
-          className="flex flex-wrap justify-center gap-6 mb-6 text-sm"
+          className="flex flex-wrap justify-center gap-6 md:gap-12 mb-6 text-sm font-poppins"
           variants={itemVariants}>
           <a
             href="#"
-            className="hover:text-[#006022]! text-gray-400! transition-colors">
+            className="hover:text-[#006022]! text-[#646161]! transition-colors">
             Personal Loan
           </a>
           <a
             href="#"
-            className="hover:text-[#006022]! text-gray-400! transition-colors">
+            className="hover:text-[#006022]! text-[#646161]! transition-colors">
             One Card
           </a>
           <a
             href="#"
-            className="hover:text-[#006022]! text-gray-400! transition-colors">
+            className="hover:text-[#006022]! text-[#646161]! transition-colors">
             Savings
           </a>
           <a
             href="#"
-            className="hover:text-[#006022]! text-gray-400! transition-colors">
+            className="hover:text-[#006022]! text-[#646161]! transition-colors">
             Checking
           </a>
           <a
             href="#"
-            className="hover:text-[#006022]! text-gray-400! transition-colors">
+            className="hover:text-[#006022]! text-[#646161]! transition-colors">
             Contact
           </a>
           <a
             href="#"
-            className="hover:text-[#006022]! text-gray-400! transition-colors">
+            className="hover:text-[#006022]! text-[#646161]! transition-colors">
             Help
           </a>
           <a
             href="#"
-            className="hover:text-[#006022]! text-gray-400! transition-colors">
+            className="hover:text-[#006022]! text-[#646161]! transition-colors">
             Support
           </a>
         </motion.nav>
@@ -141,17 +141,7 @@ const Footer = () => {
             className="w-10 h-10 bg-[#006022] rounded-full flex items-center justify-center text-white hover:bg-[#00D015] transition-colors"
             whileHover={{ scale: 1.1, rotate: 5 }}
             whileTap={{ scale: 0.9 }}>
-            <svg
-              className="w-5 h-5 text-white"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-              aria-hidden="true">
-              <path
-                fillRule="evenodd"
-                d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
-                clipRule="evenodd"
-              />
-            </svg>
+            <img className="w-2" src={face} alt="facebook" />
           </motion.a>
 
           <motion.a
@@ -177,19 +167,13 @@ const Footer = () => {
             className="w-10 h-10 bg-[#006022] rounded-full flex items-center justify-center text-white hover:bg-[#00D015] transition-colors"
             whileHover={{ scale: 1.1, rotate: 5 }}
             whileTap={{ scale: 0.9 }}>
-            <svg
-              className="w-5 h-5 text-white"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-              aria-hidden="true">
-              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-            </svg>
+            <img className="w-5" src={link} alt="link" />
           </motion.a>
         </motion.div>
 
         {/* Feedback Section */}
         <motion.div
-          className="text-center mb-6 text-sm text-gray-600"
+          className="text-center mb-6 font-poppins text-sm text-gray-600"
           variants={itemVariants}>
           <p>
             <span className="font-semibold">Send Your Feedback:</span>{" "}
@@ -203,7 +187,7 @@ const Footer = () => {
 
         {/* Legal Links */}
         <motion.div
-          className="flex flex-wrap justify-center gap-4 mb-4 text-xs text-gray-500"
+          className="flex flex-wrap justify-center gap-4 font-poppins mb-4 text-xs text-gray-500"
           variants={itemVariants}>
           <a
             href="#"
@@ -213,34 +197,34 @@ const Footer = () => {
           <span>|</span>
           <a
             href="#"
-            className="hover:text-[#006022] text-gray-400! transition-colors">
+            className="hover:text-[#006022]! text-gray-400! transition-colors">
             Terms & Condition
           </a>
           <span>|</span>
           <a
             href="#"
-            className="hover:text-[#006022] text-gray-400! transition-colors">
+            className="hover:text-[#006022]! text-gray-400! transition-colors">
             Cookie Notice
           </a>
           <span>|</span>
           <a
             href="#"
-            className="hover:text-[#006022] text-gray-400! transition-colors">
+            className="hover:text-[#006022]! text-gray-400! transition-colors">
             Copyright Policy
           </a>
           <span>|</span>
           <a
             href="#"
-            className="hover:text-[#006022] text-gray-400! transition-colors">
+            className="hover:text-[#006022]! text-gray-400! transition-colors">
             Data Policy
           </a>
         </motion.div>
 
         {/* Copyright */}
         <motion.div
-          className="text-center text-xs text-gray-500"
+          className="text-center text-xs text-gray-500 font-poppins"
           variants={itemVariants}>
-          <p>© 2024 Design Monks. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Design Monks. All rights reserved.</p>
         </motion.div>
       </div>
     </motion.footer>
