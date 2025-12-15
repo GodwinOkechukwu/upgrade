@@ -8,6 +8,7 @@ import Logo5 from "../assets/LogoWrap5.png";
 import Paypal from "../assets/Paypal2.png";
 import Button from "./ui/Button";
 import Header from "./Header";
+import background from "../assets/Background.png";
 // Framer Motion Variants for Staggered Animation
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -40,12 +41,20 @@ const Hero = () => {
       className="relative h-auto md:h-auto overflow-hidden pt-20"
       style={{
         backgroundImage: `
-    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px), /* vertical grid lines */
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px), /* horizontal grid lines */
-    linear-gradient(135deg, #00142D80 0%, #004852 100%) /* main gradient */
-  `,
-        backgroundSize: "80px 80px, 80px 80px, cover",
-        backgroundPosition: "0 0, 0 0, 0 0",
+      radial-gradient(
+        circle at center,
+        rgba(32, 32, 32, 0.3) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        to top right, /* from top-right to bottom-left */
+        rgba(16, 24, 40, 0.5) 0%,  /* reduced opacity #101828 */
+        rgba(0, 77, 64, 0.5) 100%  /* reduced opacity #004d40 */
+      ),
+      url(${background})
+    `,
+        backgroundSize: "40px 40px, cover, cover",
+        backgroundPosition: "center, top right, center",
       }}>
       <div className="relative bottom-20">
         <Header />
@@ -63,8 +72,8 @@ const Hero = () => {
               <motion.p
                 className="mb-4 flex items-center text-sm font-semibold uppercase tracking-widest text-white"
                 variants={itemVariants}>
-                <span className="mr-2 text-lg font-poppins">🔥</span> 100%
-                TRUSTED PLATFORM
+                <span className="mr-2 text-lg font-[Poppins] w-fit">🔥</span>{" "}
+                100% TRUSTED PLATFORM
               </motion.p>
             </div>
 
@@ -79,7 +88,7 @@ const Hero = () => {
 
             {/* Subtext */}
             <motion.p
-              className="mb-8 -mt-5 text-sm md:text-lg text-gray-300 max-w-md font-poppins"
+              className="mb-8 -mt-5 text-sm md:text-lg text-gray-300 max-w-md font-[Poppins]"
               variants={itemVariants}>
               No-Fee Checking Account With Cash Back Rewards. Enjoy Fee-Free
               Banking And Earn Cash Back On Your Everyday Purchases.
@@ -98,7 +107,7 @@ const Hero = () => {
 
           {/* RIGHT SIDE: Product Mockup (Phone and Card) */}
           <motion.div
-            className="relative w-full md:w-1/2 flex justify-center md:justify-end"
+            className="relative w-full md:w-1/2 flex justify-end"
             // Delayed entrance for the main visual element
             variants={itemVariants}
             transition={{ delay: 0.6 }}>
@@ -118,7 +127,7 @@ const Hero = () => {
                   whileInView={{ opacity: 1, y: 0, scale: 1 }}
                   transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
                   src={mobile}
-                  className="h-80 md:h-140 z-10 relative"
+                  className="h-80 md:h-150  z-10 relative"
                   alt="mobile-mopup"
                 />
               </div>

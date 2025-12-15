@@ -53,7 +53,7 @@ const Services = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}>
-          <div className="inline-flex font-poppins items-center bg-[#F9FAFB] gap-2 border-2 shadow border-[#F9FAFB] px-4 py-1 rounded-full text-sm font-semibold text-[#031B1D] ">
+          <div className="inline-flex font-[Poppins] items-center bg-[#F9FAFB] gap-2 border-2 border-[#EAECF0] px-4 py-1 rounded-full text-sm font-semibold text-[#031B1D] ">
             🔥 SERVICES
           </div>
         </motion.div>
@@ -72,7 +72,7 @@ const Services = () => {
 
           {/* TOP SECTION: Transfers Across The Globe */}
           <motion.div
-            className="flex flex-col md:flex-row items-center justify-around   bg-[#F6F9F8] mb-8 shadow-xl"
+            className="flex flex-col md:flex-row items-center justify-around  rounded-[20px] bg-[#F6F9F8] mb-8 border-[#0000000F]"
             variants={slideUpVariants}>
             {/* Left Mockup Placeholder (Main App Screen) */}
             <div className="w-full max-w-sm">
@@ -101,7 +101,7 @@ const Services = () => {
                 <img src={globe} alt="globe" />
               </div>
               <motion.h3
-                className="text-2xl md:text-[32px] text-start font-bold font-poppins text-black mb-4"
+                className="text-2xl md:text-[32px] text-start font-bold font-[Poppins] text-black mb-4"
                 variants={slideUpVariants}>
                 Transfers Across The <br className="" /> Globe Are Free
               </motion.h3>
@@ -117,10 +117,10 @@ const Services = () => {
               <div className="h-11 w-11 rounded-full bg-[#03A300] flex justify-center items-center mb-2 ">
                 <ChartNoAxesCombined />
               </div>
-              <h3 className="text-2xl md:text-3xl font-poppins font-semibold text-black mb-4">
+              <h3 className="text-2xl md:text-3xl font-[Poppins] font-semibold text-black mb-4">
                 Create A Card That Is <br /> Unique And Customized
               </h3>
-              <p className="text-[#676666] text-sm md:text-[16px] mb-6 font-poppins">
+              <p className="text-[#676666] text-sm md:text-[16px] mb-6 font-[Poppins]">
                 We Offer A Comprehensive Range Of Innovative Financial Services
                 Tailored To Meet Your Needs. Our Services Include High-Yield
                 Savings Accounts.
@@ -143,10 +143,10 @@ const Services = () => {
               <div className="h-11 w-11 rounded-full bg-[#03A300] flex justify-center items-center mb-2 ">
                 <img src={cog} alt="" />
               </div>
-              <h3 className="text-2xl md:text-3xl font-poppins font-semibold text-white mb-4">
+              <h3 className="text-2xl md:text-3xl font-[Poppins] font-semibold text-white mb-4">
                 Personalized Insights <br /> And Financial Goals
               </h3>
-              <p className="text-[#A7A7A7] text-sm md:text-[16px] mb-6 font-poppins">
+              <p className="text-[#A7A7A7] text-sm md:text-[16px] mb-6 font-[Poppins]">
                 Discover Opportunities That Offer Competitive Interest Rates And
                 Flexible Deposit Options. Investment Money Whilst Allowing Us To
                 Offer Personalized Services.
@@ -185,11 +185,11 @@ const Services = () => {
               }}
               className=" bg-[#E2FF54] h-80 rounded-2xl">
               <div className="mt-10 w-[80%] m-auto text-black">
-                <h2 className="text-2xl md:text-4xl font-poppins font-semibold">
+                <h2 className="text-2xl md:text-4xl font-[Poppins] font-semibold">
                   100% <br />
                   Dedication
                 </h2>
-                <p className="pt-5 font-poppins">
+                <p className="pt-5 font-[Poppins]">
                   we offer a comprehensive range of innovative financial
                   services tailored to meet your needs.
                 </p>
@@ -209,7 +209,7 @@ const Services = () => {
 
               {/* Text content */}
               <div className="max-w-[70%]">
-                <h2 className="text-2xl md:text-3xl font-semibold font-poppins leading-tight text-black">
+                <h2 className="text-2xl md:text-3xl font-semibold font-[Poppins] leading-tight text-black">
                   Hold Money In <br />
                   30+ Currencies
                 </h2>
@@ -230,7 +230,7 @@ const Services = () => {
                 boxShadow: "0 20px 40px rgba(0,0,0,0.08)",
               }}
               className=" bg-[#2D907A] rounded-2xl h-80 text-center flex justify-center items-center">
-              <h2 className="text-2xl md:text-4xl font-semibold font-poppins text-white">
+              <h2 className="text-2xl md:text-4xl font-semibold font-[Poppins] text-white">
                 Visit Our
                 <br /> Services page
               </h2>

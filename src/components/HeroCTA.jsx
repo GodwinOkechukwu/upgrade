@@ -5,7 +5,7 @@ import Button from "./ui/Button";
 
 const HeroCTA = () => {
   return (
-    <div className="bg-white">
+    <div className="bg-white pt-30">
       <section
         id="hero"
         className="bg-linear-to-r from-[#001229] to-[#004852] py-24 px-4 md:px-16 rounded-xl relative overflow-hidden md:w-[85%] m-auto">
@@ -20,7 +20,7 @@ const HeroCTA = () => {
             <h2 className="text-4xl font-integral md:text-5xl font-normal mb-6 leading-tight">
               ARE YOU READY TO <br /> START?
             </h2>
-            <p className="text-gray-200 font-poppins text-base md:text-lg mb-8">
+            <p className="text-gray-200 font-[Poppins] text-base md:text-lg mb-8">
               Personalize your settings, follow your progress, archive your
               highlights and notes automatically. Glose is the ultimate reading
               companion.
