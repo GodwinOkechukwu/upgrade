@@ -86,7 +86,7 @@ const Trustworthiness = () => {
               <motion.p
                 className="mb-4 flex items-center text-sm font-semibold uppercase tracking-widest text-white!"
                 variants={itemVariants}>
-                <span className="mr-2 text-lg font-[Poppins] w-fit ">🔥</span>
+                <span className="text-lg font-[Poppins] w-fit ">🔥</span>
                 TRUSTWORTHINESS
               </motion.p>
             </div>
