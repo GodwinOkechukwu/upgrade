@@ -72,7 +72,7 @@ const Services = () => {
 
           {/* TOP SECTION: Transfers Across The Globe */}
           <motion.div
-            className="flex flex-col md:flex-row items-center justify-around  rounded-[20px] bg-[#F6F9F8] mb-8 border-[#0000000F]"
+            className="flex flex-col md:flex-row items-center justify-around  rounded-[20px] bg-[#F6F9F8] border mb-8 border-[#0000000F]"
             variants={slideUpVariants}>
             {/* Left Mockup Placeholder (Main App Screen) */}
             <div className="w-full max-w-sm">
@@ -112,7 +112,7 @@ const Services = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             {/* Feature Card 1: Custom Card (Left Column) */}
             <motion.div
-              className="bg-[#F6F9F8] border-[#F6F9F8] p-8 rounded-2xl max-h-168.25 shadow-xl transition-shadow border duration-300 hover:shadow-2xl"
+              className="bg-[#F6F9F8] border-[#0000000F] border p-8 rounded-[20px] max-h-168.25  transition-shadow duration-300 "
               variants={slideUpVariants}>
               <div className="h-11 w-11 rounded-full bg-[#03A300] flex justify-center items-center mb-2 ">
                 <ChartNoAxesCombined />
@@ -138,7 +138,7 @@ const Services = () => {
 
             {/* Feature Card 2: Personalized Insights (Right Column) */}
             <motion.div
-              className="p-8 rounded-2xl shadow-xl transition-shadow duration-300 hover:shadow-2xl bg-[#001027] "
+              className="p-8 rounded-[20px] border border-[#0000000F] transition-shadow duration-300  bg-[#001027] "
               variants={slideUpVariants}>
               <div className="h-11 w-11 rounded-full bg-[#03A300] flex justify-center items-center mb-2 ">
                 <img src={cog} alt="" />
@@ -183,8 +183,8 @@ const Services = () => {
                 y: -8,
                 boxShadow: "0 20px 40px rgba(0,0,0,0.08)",
               }}
-              className=" bg-[#E2FF54] h-80 rounded-2xl">
-              <div className="mt-10 w-[80%] m-auto text-black">
+              className=" bg-[#E2FF54] h-80 border border-[#0000000F] rounded-[20px]">
+              <div className="mt-10 w-[80%]  m-auto text-black">
                 <h2 className="text-2xl md:text-4xl font-[Poppins] font-semibold">
                   100% <br />
                   Dedication
@@ -201,7 +201,7 @@ const Services = () => {
                 y: -8,
                 boxShadow: "0 20px 40px rgba(0,0,0,0.08)",
               }}
-              className="relative bg-[#F6F9F8] rounded-[28px] p-10 h-80 overflow-hidden">
+              className="relative bg-[#F6F9F8] border border-[#0000000F] rounded-[20px] p-10 h-80 overflow-hidden">
               {/* Icon */}
               <div className="w-12 h-12 rounded-full bg-[#00B512] flex items-center justify-center mb-6 ">
                 <span className="text-white text-2xl font-bold">$</span>
@@ -229,7 +229,7 @@ const Services = () => {
                 y: -8,
                 boxShadow: "0 20px 40px rgba(0,0,0,0.08)",
               }}
-              className=" bg-[#2D907A] rounded-2xl h-80 text-center flex justify-center items-center">
+              className=" bg-[#2D907A] rounded-[20px] border border-[#0000000F] h-80 text-center flex justify-center items-center">
               <h2 className="text-2xl md:text-4xl font-semibold font-[Poppins] text-white">
                 Visit Our
                 <br /> Services page

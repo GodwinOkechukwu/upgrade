@@ -8,7 +8,7 @@ const HeroCTA = () => {
     <div className="bg-white pt-30">
       <section
         id="hero"
-        className="bg-linear-to-r from-[#001229] to-[#004852] py-24 px-4 md:px-16 rounded-xl relative overflow-hidden md:w-[85%] m-auto">
+        className="bg-linear-to-r from-[#001229] to-[#004852] py-24 px-4 md:px-16 rounded-[20px] relative overflow-hidden md:w-[85%] m-auto">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between max-h-115">
           {/* Left Content */}
           <motion.div

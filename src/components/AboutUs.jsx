@@ -61,8 +61,8 @@ export default function AboutUs() {
           {/* ================= LEFT GRAPH ================= */}
           <motion.div
             variants={fadeUp}
-            className="bg-[#F5F5F5] rounded-3xl p-10 border border-[#0000000F]">
-            <div className="bg-[#004852] rounded-3xl p-8 text-white">
+            className="bg-[#F5F5F5] rounded-[20px] p-10 border border-[#0000000F]">
+            <div className="bg-[#004852] rounded-[20px] p-8 text-white">
               {/* Header */}
               <motion.div variants={fadeUp} className="mb-6 font-[Poppins]">
                 <p className="text-sm md:text-[18px] opacity-80 text-[#F9F9F9] font-medium">
@@ -195,7 +195,7 @@ export default function AboutUs() {
                       y: activeFeature === i ? -4 : 0,
                     }}
                     transition={{ duration: 0.4, ease: "easeOut" }}
-                    className={`rounded-2xl p-6 cursor-pointer transition  ${
+                    className={`rounded-[20px] p-6 cursor-pointer transition  ${
                       activeFeature === i
                         ? "bg-[#F1FFD2] shadow-lg"
                         : "bg-[#E5E5E5] border border-[#F9FAFB]"

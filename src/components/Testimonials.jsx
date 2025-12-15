@@ -88,7 +88,7 @@ const Testimonials = () => {
                 y: -8,
                 boxShadow: "0 20px 40px rgba(0,0,0,0.08)",
               }}
-              className={`relative rounded-2xl p-8 text-left transition-all ${
+              className={`relative rounded-[20px] p-8 text-left transition-all ${
                 item.active
                   ? "bg-[#004852] text-white scale-105"
                   : "bg-white text-gray-700"
