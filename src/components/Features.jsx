@@ -96,7 +96,7 @@ const Features = () => {
                 initial={{ opacity: 0, y: 50, scale: 0.95 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-                className="h-75 md:h-100 absolute bottom-0 left-0"
+                className="h-75 md:h-100 absolute bottom-0 left-0 md:left-7"
                 src={mobile1}
                 alt=""
               />
