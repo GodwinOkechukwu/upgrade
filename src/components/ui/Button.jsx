@@ -54,7 +54,7 @@ const Button = ({
         whileTap={{ scale: 0.98 }}>
         {/* Text Button */}
         <div
-          className={`rounded-full px-8 py-3 text-lg font-bold font-poppins transition duration-300 ${primaryColor} ${textColor} ${ringColor} ${border}`}>
+          className={`rounded-full px-8 py-3 text-lg font-bold font-[Poppins] transition duration-300 ${primaryColor} ${textColor} ${ringColor} ${border}`}>
           <span className="pr-6">{children}</span>
         </div>
 

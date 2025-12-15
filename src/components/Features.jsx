@@ -44,7 +44,7 @@ const Features = () => {
         >
           {/* LEFT SIDE: Text and CTA */}
           <div className="w-full md:w-1/2">
-            <div className="inline-flex items-center bg-[#F9FAFB] gap-2 border-2 shadow  border-[#F9FAFB] px-4 py-1 rounded-full text-sm font-semibold text-[#031B1D] mb-6">
+            <div className="inline-flex items-center bg-[#F9FAFB] gap-2 border-2   border-[#EAECF0] px-4 py-1 rounded-full text-sm font-semibold text-[#031B1D] mb-6">
               🔥 FEATURED
             </div>
 
@@ -60,7 +60,7 @@ const Features = () => {
               {featurePoints.map((point, index) => (
                 <motion.li
                   key={index}
-                  className="flex items-start text-sm md:text-[16px] font-poppins text-[#676666] max-w-100"
+                  className="flex items-start text-sm md:text-[16px] font-[Poppins] text-[#676666] max-w-100"
                   variants={itemVariants}
                   // Add a slight delay for subsequent items to feel staggered
                   transition={{ delay: 0.1 + index * 0.05 }}>

@@ -61,10 +61,10 @@ export default function AboutUs() {
           {/* ================= LEFT GRAPH ================= */}
           <motion.div
             variants={fadeUp}
-            className="bg-[#F5F5F5] rounded-3xl p-10 border">
+            className="bg-[#F5F5F5] rounded-3xl p-10 border border-[#0000000F]">
             <div className="bg-[#004852] rounded-3xl p-8 text-white">
               {/* Header */}
-              <motion.div variants={fadeUp} className="mb-6 font-poppins">
+              <motion.div variants={fadeUp} className="mb-6 font-[Poppins]">
                 <p className="text-sm md:text-[18px] opacity-80 text-[#F9F9F9] font-medium">
                   Saving Month
                 </p>
@@ -161,7 +161,7 @@ export default function AboutUs() {
           {/* ================= RIGHT CONTENT ================= */}
           <motion.div variants={fadeUp} className="relative">
             {/* About Pill */}
-            <div className="inline-flex items-center poppins bg-[#F9FAFB] gap-2 border-2 shadow  border-[#F9FAFB] px-4 py-1 rounded-full text-sm font-semibold text-[#031B1D] mb-6">
+            <div className="inline-flex items-center poppins bg-[#F9FAFB] gap-2 border-2  border-[#EAECF0] px-4 py-1 rounded-full text-sm font-semibold text-[#031B1D] mb-6">
               🔥 ABOUT US
             </div>
 
@@ -200,10 +200,10 @@ export default function AboutUs() {
                         ? "bg-[#F1FFD2] shadow-lg"
                         : "bg-[#E5E5E5] border border-[#F9FAFB]"
                     }`}>
-                    <h3 className="text-lg md:text-[20px] font-bold font-poppins text-black">
+                    <h3 className="text-lg md:text-[20px] font-bold font-[Poppins] text-black">
                       {item.title}
                     </h3>
-                    <p className="text-sm md:text-[16px] font-poppins  text-black mt-2">
+                    <p className="text-sm md:text-[16px] font-[Poppins]  text-black mt-2">
                       {item.desc}
                     </p>
                   </motion.div>

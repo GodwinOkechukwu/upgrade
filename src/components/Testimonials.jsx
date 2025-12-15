@@ -54,11 +54,11 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section id="testimonials" className="bg-[#F6F9F8] py-24">
+    <section id="testimonials" className="bg-[#F6F9F8] py-24 ">
       <div className="max-w-6xl mx-auto px-4 text-center">
         {/* Badge */}
 
-        <div className="inline-flex items-center font-poppins bg-[#F9FAFB] gap-2 border-2 shadow  border-[#F9FAFB] px-4 py-1 rounded-full text-sm font-semibold text-[#031B1D] mb-6">
+        <div className="inline-flex items-center font-[Poppins] bg-[#F9FAFB] gap-2 border-2 border-[#EAECF0] px-4 py-1 rounded-full text-sm font-semibold text-[#031B1D] mb-6">
           🔥 TESTIMONIAL
         </div>
 
@@ -101,7 +101,7 @@ const Testimonials = () => {
                 <img className="w-15" src={colon} alt="colon" />
               </motion.div>
 
-              <p className="text-sm leading-relaxed mb-6 font-poppins">
+              <p className="text-sm leading-relaxed mb-6 font-[Poppins]">
                 {item.text}
               </p>
 
@@ -112,7 +112,7 @@ const Testimonials = () => {
                   alt={item.name}
                   className="w-10 h-10 rounded-full object-cover"
                 />
-                <div className="font-poppins">
+                <div className="font-[Poppins]">
                   <img src={star} alt="" />
                   <p className="text-sm font-semibold">{item.name}</p>
                   <p

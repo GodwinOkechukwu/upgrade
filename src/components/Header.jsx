@@ -69,7 +69,7 @@ const Header = () => {
             <button
               key={link.name}
               onClick={() => scrollTo(link.id)}
-              className="text-sm font-medium font-poppins text-[#DCDCDC] transition hover:text-[#00B512] cursor-pointer">
+              className="text-sm font-medium font-[Poppins] text-[#DCDCDC] transition hover:text-[#00B512] cursor-pointer">
               {link.name}
             </button>
           ))}
@@ -77,7 +77,7 @@ const Header = () => {
 
         {/* Sign In / Sign Up Button */}
         <div className="hidden items-center space-x-4 md:flex">
-          <button className="rounded-xl  border cursor-pointer border-[#DCDCDC]  px-8 py-2 text-sm font-bold font-poppins transition duration-300 hover:bg-[#00B512]! hover:border-[#00B512]">
+          <button className="rounded-xl  border cursor-pointer border-[#DCDCDC]  px-8 py-2 text-sm font-bold font-[Poppins] transition duration-300 hover:bg-[#00B512]! hover:border-[#00B512]">
             Sign In
           </button>
         </div>

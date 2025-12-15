@@ -86,7 +86,7 @@ const Trustworthiness = () => {
               <motion.p
                 className="mb-4 flex items-center text-sm font-semibold uppercase tracking-widest text-white!"
                 variants={itemVariants}>
-                <span className="mr-2 text-lg font-poppins">🔥</span>{" "}
+                <span className="mr-2 text-lg font-[Poppins] w-fit ">🔥</span>
                 TRUSTWORTHINESS
               </motion.p>
             </div>
@@ -99,7 +99,7 @@ const Trustworthiness = () => {
             </motion.h2>
 
             <motion.p
-              className="mb-10 md:text-lg text-gray-300 max-w-xl font-poppins capitalize"
+              className="mb-10 md:text-lg text-gray-300 max-w-xl font-[Poppins] capitalize"
               variants={itemVariants}>
               Our mission is to make finance more accessible, transparent, and
               secure for everyone. with cutting
