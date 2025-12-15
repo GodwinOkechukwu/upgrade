@@ -72,8 +72,8 @@ const Hero = () => {
               <motion.p
                 className="mb-4 flex items-center text-sm font-semibold uppercase tracking-widest text-white"
                 variants={itemVariants}>
-                <span className="mr-2 text-lg font-[Poppins] w-fit">🔥</span>{" "}
-                100% TRUSTED PLATFORM
+                <span className=" text-lg font-[Poppins] w-fit">🔥</span> 100%
+                TRUSTED PLATFORM
               </motion.p>
             </div>
 
