@@ -91,7 +91,7 @@ const Features = () => {
             // The whole image container fades and slides up on view
             variants={itemVariants}
             transition={{ delay: 0.3 }}>
-            <div className="w-full max-w-xl relative aspect-4/3 bg-[#F5F5F5] rounded-2xl flex items-center justify-center p-16 shadow-xl border border-gray-100">
+            <div className="w-full max-w-xl relative aspect-4/3 bg-[#F5F5F5] rounded-[20px] flex items-center justify-center p-16 border border-[#0000000F]">
               <motion.img
                 initial={{ opacity: 0, y: 50, scale: 0.95 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
